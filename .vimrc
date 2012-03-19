@@ -178,10 +178,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeIgnore=['\.o$', '\~$', '\.pyc$']
 " }
 " Vimpress {
-let VIMPRESS=[{'username':'yishanhe',
-              \'password':'easonherd',
-              \'blog_url':'http://blog.yishanhe.net/'
-              \}]
+"let VIMPRESS=[{'username':'',
+"              \'password':'',
+"              \'blog_url':'http://blog.yishanhe.net/'
+"              \}]
 " }
 " LaTex Suite {
 set grepprg=grep/-nH/$*
