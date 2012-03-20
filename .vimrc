@@ -33,6 +33,7 @@ filetype off " required by vundle
 filetype plugin indent on " required by vundle 
 set autowrite " writes on make/shell commands
 set autoread " auto read when file is changed from outside
+set fdn=2 " auto fold depth
 " Register
 set clipboard+=unnamed
 " Backup
@@ -50,6 +51,11 @@ set ruler
 set showcmd
 " Indent
 set copyindent " copy previous indentation
+" Undo
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
 " Match and search
 set hlsearch " highlight search
 set ignorecase
@@ -127,6 +133,7 @@ Bundle 'gmarik/vundle'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
+" Bundle 'greyblake/vim-preview.git'
 " vim-scripts repos
 Bundle 'taglist.vim'
 Bundle 'SuperTab'
@@ -142,6 +149,7 @@ Bundle 'Markdown'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'c.vim'
 Bundle 'snipMate'
+Bundle 'ctrlp.vim'
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -178,10 +186,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeIgnore=['\.o$', '\~$', '\.pyc$']
 " }
 " Vimpress {
-"let VIMPRESS=[{'username':'',
-"              \'password':'',
-"              \'blog_url':'http://blog.yishanhe.net/'
-"              \}]
+let VIMPRESS=[{'username':'yishanhe',
+              \'password':'',
+              \'blog_url':'http://blog.yishanhe.net/'
+              \}]
 " }
 " LaTex Suite {
 set grepprg=grep/-nH/$*
