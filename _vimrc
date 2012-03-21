@@ -185,7 +185,7 @@ let NERDTreeIgnore=['\.o$', '\~$', '\.pyc$']
 " }
 " Vimpress {
 let VIMPRESS=[{'username':'yishanhe',
-              \'password':'easonherd',
+              \'password':'',
               \'blog_url':'http://blog.yishanhe.net/'
               \}]
 " }
