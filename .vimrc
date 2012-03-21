@@ -88,7 +88,7 @@ endfunction
 " \ 'auto_export': 1,
 " Vimwiki {
 let g:vimwiki_list = [{'path': '/home/yish/yishanhe.github.com/_wiki_source/',
-\ 'path_html': '/home/yish/yishanhe.github.com/assets/wiki_html/',
+\ 'path_html': '/home/yish/yishanhe.github.com/wiki/',
 \ 'template_path': '/home/yish/yishanhe.github.com/assets/vimwiki_include/template/',
 \ 'template_default': 'the-yish',
 \ 'index': 'index',
