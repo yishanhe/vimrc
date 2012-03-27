@@ -103,9 +103,9 @@ endfunction
 " \ 'auto_export': 1,
 " Vimwiki {
 let g:vimwiki_list = [{'path': 'D:/yishanhe.github.com/_wiki_source/',
-\ 'path_html': 'D:/yishanhe.github.com/assets/wiki_html/',
+\ 'path_html': 'D:/yishanhe.github.com/wiki/',
 \ 'template_path': 'D:/yishanhe.github.com/assets/vimwiki_include/template/',
-\ 'template_default': 'the-yish',
+\ 'template_default': 'united',
 \ 'index': 'index',
 \ 'ext': '.wiki',
 \ 'syntax': 'default',
@@ -196,12 +196,6 @@ let NERDTreeWinPos="right"
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "hide pyc && others
 let NERDTreeIgnore=['\.o$', '\~$', '\.pyc$']
-" }
-" Vimpress {
-let VIMPRESS=[{'username':'yishanhe',
-              \'password':'',
-              \'blog_url':'http://blog.yishanhe.net/'
-              \}]
 " }
 " LaTex Suite {
 set grepprg=grep/-nH/$*
