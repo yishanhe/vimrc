@@ -4,26 +4,9 @@
 set encoding=utf-8                                  
 set termencoding=utf-8
 set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
+set fileencodings=ucs-bom,utf-8,gb2312,big5,latin1
 
-function! ViewUTF8()
-	set encoding=utf-8                                  
-	set termencoding=big5
-endfunction
 
-function! UTF8()
-	set encoding=utf-8                                  
-	set termencoding=big5
-	set fileencoding=utf-8
-	set fileencodings=ucs-bom,big5,utf-8,latin1
-endfunction
-
-function! Big5()
-	set encoding=big5
-	set fileencoding=big5
-endfunction
-" }
- 
 
 " General {
 autocmd! bufwritepost .vimrc source ~/.vimrc " autoload vimrc when editing
@@ -33,7 +16,7 @@ filetype off " required by vundle
 filetype plugin indent on " required by vundle 
 set autowrite " writes on make/shell commands
 set autoread " auto read when file is changed from outside
-set fdn=2 " auto fold depth
+"set fdn=2 " auto fold depth
 " Register
 set clipboard+=unnamed
 " Backup
@@ -90,7 +73,7 @@ endfunction
 let g:vimwiki_list = [{'path': '/home/yish/yishanhe.github.com/_wiki_source/',
 \ 'path_html': '/home/yish/yishanhe.github.com/wiki/',
 \ 'template_path': '/home/yish/yishanhe.github.com/assets/vimwiki_include/template/',
-\ 'template_default': 'the-yish',
+\ 'template_default': 'united',
 \ 'index': 'index',
 \ 'ext': '.wiki',
 \ 'syntax': 'default',
