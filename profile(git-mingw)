@@ -200,3 +200,5 @@ alias ls='/bin/ls --show-control-chars -F --color=tty'
 
 alias vim="/c/Program\ Files/Vim/vim73/gvim.exe"
 alias gvim="/c/Program\ Files/Vim/vim73/gvim.exe" 
+alias vim="/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe"
+alias gvim="/c/Program\ Files\ \(x86\)/Vim/vim73/gvim.exe" 

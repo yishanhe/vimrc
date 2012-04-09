@@ -88,7 +88,7 @@ map <leader>e :e! ~/.vimrc<cr>
 autocmd! bufwritepost .vimrc source ~/.vimrc " autoload vimrc when editing
 
 " Set persistent undo
-set undofile
+" set undofile
 
 " Fast save
 nmap <leader>w :w!<cr>
@@ -168,8 +168,8 @@ endfunction
 " }
 
 " Switch tabs {
-nmap <C-N> :tabnext<CR>
-nmap <C-P> :tabprevious<CR>
+map <C-F3> :tabnext<CR>
+map <C-F2> :tabprevious<CR>
 " Tab configuration
 map <leader>tn :tabnew<cr>
 map <leader>te :tabedit
@@ -178,8 +178,8 @@ map <leader>tm :tabmove
 " }
 
 " Buffer {
-nmap <leader>bn  :bnext<CR>
-nmap <leader>bp  :bprev<CR>
+map <F3> :bnext<CR>
+map <F2> :bprev<CR>
 " }  
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -300,6 +300,7 @@ if MySys()=="win32"
 	\ 'ext': '.wiki',
 	\ 'syntax': 'default',
 	\ 'auto_export': 1,
+	\ 'nested_syntaxes': {'python': 'python', 'cpp': 'cpp', 'c': 'c', 'java': 'java'},
 	\ 'template_ext': '.html'}]
 elseif MySys()=="unix"
 	let g:vimwiki_list = [{'path': '/home/yish/yishanhe.github.com/_wiki_source/',
@@ -310,6 +311,7 @@ elseif MySys()=="unix"
 	\ 'ext': '.wiki',
 	\ 'syntax': 'default',
 	\ 'auto_export': 1,
+	\ 'nested_syntaxes': {'python': 'python', 'cpp': 'cpp', 'c': 'c', 'java': 'java'},
 	\ 'template_ext': '.html'}]
 endif
 
