@@ -3,7 +3,7 @@
 "  Maitained by Yi Shanhe<yishanhe.hust@gmail.com>
 "  Great thanks to gmarik & vgod 's vimrc
 "  Homepage http://yishanhe.net/
-"  updated 04/05/2012
+"  updated 05-01 2012
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Detect the system
@@ -81,6 +81,8 @@ endif
 " Replace the '\' by ','
 let mapleader=","
 let g:mapleader=","
+" map ESC 
+inoremap jj <ESC>
 
 " Fast editing of the .vimrc
 map <leader>e :e! ~/.vimrc<cr>
@@ -119,7 +121,7 @@ set nowb
 set noswapfile
 
 " Visualization
-colo desert
+" colo desert
 set showmatch " show match )&}
 set showmode " show current mode
 syntax on " syntax highlight on
@@ -215,6 +217,7 @@ Bundle 'c.vim'
 Bundle 'snipMate'
 Bundle 'minibufexpl.vim'
 Bundle 'taglist.vim'
+Bundle 'Rainbow-Parenthsis-Bundle'
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -238,6 +241,7 @@ let Tlist_Exit_OnlyWindow=1
 " }
 
 " winmanager {
+" add `exe 'q'` the file `winmanager.vim` line1064 `call s:StartWindowsManager()`		
 let g:defaultExplorer=0
 " let g:winManagerWindowLayout='BufExplorer,FileExplorer|TagList'
 let g:winManagerWindowLayout='NERDTree|TagList'
@@ -328,4 +332,10 @@ map <leader>tl <Plug>VimwikiToggleListItem
 
 " Ctags {
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
+" }
+
+" Rainbow-Parenthsis-Bundle {
+" `rainbow_parenthesis.vim`
+" add `let rainbow_parenthesis#active = 0`
+" after line 66
 " }
