@@ -83,6 +83,8 @@ let mapleader=","
 let g:mapleader=","
 " map ESC 
 inoremap jj <ESC>
+" map ` for '' in KCB poker
+inoremap '' ` 
 
 " Fast editing of the .vimrc
 map <leader>e :e! ~/.vimrc<cr>
@@ -186,7 +188,6 @@ map <F2> :bprev<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle               vim script plugins manager
-" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -199,6 +200,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+Bundle 'samsonw/vim-task'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -297,9 +299,9 @@ map <leader>u :TMiniBufExplorer<cr>
 " Vimwiki {
     
 if MySys()=="win32"
-	let g:vimwiki_list = [{'path': 'D:/yishanhe.github.com/_wiki_source/',
-	\ 'path_html': 'D:/yishanhe.github.com/wiki/',
-	\ 'template_path': 'D:/yishanhe.github.com/assets/vimwiki_include/template/',
+	let g:vimwiki_list = [{'path': 'C:\Users\yish\Documents\GitHub\yishanhe.github.com/_wiki_source/',
+	\ 'path_html': 'C:\Users\yish\Documents\GitHub\yishanhe.github.com/wiki/',
+	\ 'template_path': 'C:\Users\yish\Documents\GitHub\yishanhe.github.com/assets/vimwiki_include/template/',
 	\ 'template_default': 'united',
 	\ 'index': 'index',
 	\ 'ext': '.wiki',
