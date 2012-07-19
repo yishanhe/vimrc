@@ -336,6 +336,7 @@ map <leader>tl <Plug>VimwikiToggleListItem
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
 " }
 
+
 " Rainbow-Parenthsis-Bundle {
 " `rainbow_parenthesis.vim`
 " add `let rainbow_parenthesis#active = 0`
