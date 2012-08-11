@@ -3,7 +3,7 @@
 "  Maitained by Yi Shanhe<yishanhe.hust@gmail.com>
 "  Great thanks to gmarik & vgod 's vimrc
 "  Homepage http://yishanhe.net/
-"  updated 07-19 2012
+"  updated 05-01 2012
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Detect the system
@@ -83,6 +83,8 @@ let mapleader=","
 let g:mapleader=","
 " map ESC 
 inoremap jj <ESC>
+" map ` for '' in KCB poker
+inoremap '' ` 
 
 " Fast editing of the .vimrc
 map <leader>e :e! ~/.vimrc<cr>
@@ -186,7 +188,6 @@ map <F2> :bprev<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle               vim script plugins manager
-" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -199,7 +200,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-" Bundle 'samsonw/vim-task'
+Bundle 'samsonw/vim-task'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -220,6 +221,7 @@ Bundle 'snipMate'
 Bundle 'minibufexpl.vim'
 Bundle 'taglist.vim'
 Bundle 'Rainbow-Parenthsis-Bundle'
+Bundle 'calendar.vim'
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -298,9 +300,9 @@ map <leader>u :TMiniBufExplorer<cr>
 " Vimwiki {
     
 if MySys()=="win32"
-	let g:vimwiki_list = [{'path': 'D:/yishanhe.github.com/_wiki_source/',
-	\ 'path_html': 'D:/yishanhe.github.com/wiki/',
-	\ 'template_path': 'D:/yishanhe.github.com/assets/vimwiki_include/template/',
+	let g:vimwiki_list = [{'path': 'C:\Users\yish\Documents\GitHub\yishanhe.github.com/_wiki_source/',
+	\ 'path_html': 'C:\Users\yish\Documents\GitHub\yishanhe.github.com/wiki/',
+	\ 'template_path': 'C:\Users\yish\Documents\GitHub\yishanhe.github.com/assets/vimwiki_include/template/',
 	\ 'template_default': 'united',
 	\ 'index': 'index',
 	\ 'ext': '.wiki',
@@ -336,9 +338,11 @@ map <leader>tl <Plug>VimwikiToggleListItem
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>  
 " }
 
-
 " Rainbow-Parenthsis-Bundle {
 " `rainbow_parenthesis.vim`
 " add `let rainbow_parenthesis#active = 0`
 " after line 66
+" }
+" Calendar {
+map <F8> :CalendarH<cr>
 " }
