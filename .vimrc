@@ -60,8 +60,21 @@ endif " end setting for gvim.exe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Unix
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 if MySys()=="unix"
+	set encoding=utf-8                                  
+	set termencoding=utf-8
+	set fileencoding=utf-8
+	set fileencodings=ucs-bom,utf-8,gb2312,big5,latin1
+
+	" set persistent undo
+	" set undodir=~/.vim/undodir
+	
+    set rtp+=~/.vim/bundle/vundle/
+
+endif
+
+
+if MySys()=="mac"
 	set encoding=utf-8                                  
 	set termencoding=utf-8
 	set fileencoding=utf-8
@@ -96,6 +109,12 @@ autocmd! bufwritepost .vimrc source ~/.vimrc " autoload vimrc when editing
 
 " Fast save
 nmap <leader>w :w!<cr>
+
+" limit the syntax highlight num
+set synmaxcol=128
+
+"set ttyscroll=3
+set lazyredraw
 
 " Keep lines of command line history
 set history=512 
@@ -187,6 +206,7 @@ map <F2> :bprev<CR>
 " }  
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 " Vundle               vim script plugins manager
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -200,7 +220,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'samsonw/vim-task'
+" Bundle 'samsonw/vim-task'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -211,16 +231,16 @@ Bundle 'vimwiki'
 Bundle 'winmanager'
 " Bundle 'bufexplorer.zip'
 Bundle 'The-NERD-tree'
-Bundle 'matrix.vim--Yang'
+" Bundle 'matrix.vim--Yang'
 Bundle 'FencView.vim'
 Bundle 'Conque-Shell'
 Bundle 'Markdown'
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+" Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'c.vim'
 Bundle 'snipMate'
 Bundle 'minibufexpl.vim'
 Bundle 'taglist.vim'
-Bundle 'Rainbow-Parenthsis-Bundle'
+" Bundle 'Rainbow-Parenthsis-Bundle'
 Bundle 'calendar.vim'
 
 " non github repos
@@ -310,10 +330,21 @@ if MySys()=="win32"
 	\ 'auto_export': 1,
 	\ 'nested_syntaxes': {'python': 'python', 'cpp': 'cpp', 'c': 'c', 'java': 'java'},
 	\ 'template_ext': '.html'}]
+"elseif MySys()=="unix"
+"	let g:vimwiki_list = [{'path': '/home/yish/yishanhe.github.com/_wiki_source/',
+"	\ 'path_html': '/home/yish/yishanhe.github.com/wiki/',
+"	\ 'template_path': '/home/yish/yishanhe.github.com/assets/vimwiki_include/template/',
+"	\ 'template_default': 'united',
+"	\ 'index': 'index',
+"	\ 'ext': '.wiki',
+"	\ 'syntax': 'default',
+"	\ 'auto_export': 1,
+"	\ 'nested_syntaxes': {'python': 'python', 'cpp': 'cpp', 'c': 'c', 'java': 'java'},
+"	\ 'template_ext': '.html'}]
 elseif MySys()=="unix"
-	let g:vimwiki_list = [{'path': '/home/yish/yishanhe.github.com/_wiki_source/',
-	\ 'path_html': '/home/yish/yishanhe.github.com/wiki/',
-	\ 'template_path': '/home/yish/yishanhe.github.com/assets/vimwiki_include/template/',
+	let g:vimwiki_list = [{'path': '/Users/shanheyi/yishanhe.github.com/_wiki_source/',
+	\ 'path_html': '/Users/shanheyi/yishanhe.github.com/wiki/',
+	\ 'template_path': '/Users/shanheyi/yishanhe.github.com/assets/vimwiki_include/template/',
 	\ 'template_default': 'united',
 	\ 'index': 'index',
 	\ 'ext': '.wiki',
