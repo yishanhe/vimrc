@@ -1,28 +1,63 @@
-#!/bin/bash
+#!/bin/zsh
+
 VIMHOME=~/.vim
+DIR=""
+ 
+echo "Start to install vimrc"
 
-warn() {
-    echo "$1" >&2
-}
+if
+    [-e $VIMHOME/vimrc] 
+then
+    echo "$VIMHOME/vimrc already exists."
+    DIR=${DIR}" $VIMHOME/vimrc" 
+fi
 
-die() {
-    warn "$1"
-    exit 1
-}
+if 
+    [-e ~/.vim]
+then
+    echo "~/.vim already exists."
+    DIR=${DIR}" ~/.vim" 
+fi
 
-[ -e "$VIMHOME/vimrc" ] && die "$VIMHOME/vimrc already exists."
-[ -e "~/.vim" ] && die "~/.vim already exists."
-[ -e "~/.vimrc" ] && die "~/.vimrc already exists."
+if 
+    [-e ~/.vimrc]
+then
+    echo "~/.vimrc already exists."
+    DIR=${DIR}" ~/.vimrc" 
+fi
 
+echo $DIR
+echo -n "Are you sure to delete these files?(yes or no)"
+read Arg
+case $Arg in
+    y|Y|yes|Yes)
+        [-z $DIR];;
+#        rm $VIMHOME/vimrc ~/.vim ~/.vimrc;;
+    n|N|no|No)
+         echo "Aborted by user"
+         exit 0;;
+esac
+
+echo "Get the vimrc repo"
 git clone git://github.com/yishanhe/vimrc.git "$VIMHOME"
-git clone git://github.com/gmarik/vundle.git $VIMHOME/bundle/vundle
-cd "$VIMHOME"
-cd bundle/command-t/ruby/command-t
-(ruby extconf.rb && make) || warn "Can't compile Command-T."
 
+echo "Get the vundle repo"
+git clone git://github.com/gmarik/vundle.git $VIMHOME/bundle/vundle
+
+
+echo "Creat the vimrc link"
+cd "$VIMHOME"
 cd ..
 ln -s .vim/dotvimrc .vimrc
-vim +BundleInstall
+
+echo "Bundle Install"
+vim +BundleInstall +qa
+
+
+echo "Compile Command-T"
+cd $VIMHOME/bundle/command-t/ruby/command-t
+(ruby extconf.rb && make) || echo "Can't compile Command-T."
+
 
 echo "Shanhe's vimrc is installed."
 
