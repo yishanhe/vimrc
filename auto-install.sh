@@ -6,33 +6,37 @@ DIR=""
 echo "Start to install vimrc"
 
 if
-    [-e $VIMHOME/vimrc] 
+    test -e $VIMHOME/vimrc 
 then
     echo "$VIMHOME/vimrc already exists."
     DIR=${DIR}" $VIMHOME/vimrc" 
 fi
 
 if 
-    [-e ~/.vim]
+    test -e ~/.vim
 then
     echo "~/.vim already exists."
     DIR=${DIR}" ~/.vim" 
 fi
 
 if 
-    [-e ~/.vimrc]
+    test -e ~/.vimrc
 then
     echo "~/.vimrc already exists."
     DIR=${DIR}" ~/.vimrc" 
 fi
 
-echo $DIR
 echo -n "Are you sure to delete these files?(yes or no)"
 read Arg
 case $Arg in
     y|Y|yes|Yes)
-        [-z $DIR];;
-#        rm $VIMHOME/vimrc ~/.vim ~/.vimrc;;
+        #[-z $DIR]
+        if 
+            test -z $DIR
+        then
+            rm -r $DIR
+        fi
+        ;;
     n|N|no|No)
          echo "Aborted by user"
          exit 0;;
