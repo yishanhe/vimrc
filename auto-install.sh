@@ -58,7 +58,7 @@ echo "Bundle Install"
 vim +BundleInstall +qa
 
 
-echo "Compile Command-T"
+echo "Compile Command-T(ruby needed)"
 cd $VIMHOME/bundle/command-t/ruby/command-t
 (ruby extconf.rb && make) || echo "Can't compile Command-T."
 
