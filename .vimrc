@@ -295,12 +295,20 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 "
-" original repos on github
-" Bundle 'tpope/vim-fugitive'
+"" original repos on github
+Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'tpope/vim-rails.git'
-
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'kien/ctrlp.vim'
+" color
+Bundle 'tomasr/molokai'
+Bundle 'sjl/badwolf'
+Bundle 'altercation/vim-colors-solarized'
+" statusline
+"Bundle 'itchyny/lightline.vim'
+Bundle 'bling/vim-airline.vim'
 " vim-scripts repos
 Bundle 'SuperTab'
 Bundle 'xml.vim'
@@ -313,14 +321,17 @@ Bundle 'FencView.vim'
 " Bundle 'Markdown'
 " Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 Bundle 'c.vim'
-Bundle 'snipMate'
+" Bundle 'snipMate'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 " Bundle 'minibufexpl.vim'
 Bundle 'taglist.vim'
 " Bundle 'calendar.vim'
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+" Bundle 'https://github.com/Lokaltog/vim-powerline.git'
 " Bundle 'https://github.com/yishanhe/winmanager.git'
 
 " Brief help
@@ -418,7 +429,7 @@ map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " Vimwiki {
 if g:OS#windows
-	let g:vimwikihome = 'C:\Users\yish\Documents\GitHub\'
+	let g:vimwikihome = 'C:\Users\syi\Documents\GitHub\'
 elseif g:OS#unix
 	let g:vimwikihome = '/scratch/syi.scratch/GitRepo/'
 elseif g:OS#mac
