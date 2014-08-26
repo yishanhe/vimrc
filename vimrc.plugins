@@ -1,0 +1,54 @@
+" Vim Plugin managed by Vundle 
+" This file needs to be sourced at the beginning of vimrc
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+Plugin 'gmarik/Vundle.vim'
+" Editor functions
+Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/vim-easymotion'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+" Programming
+if executable('ctags')
+    Plugin 'majutsushi/tagbar'
+endif
+
+
+
+Plugin 'c.vim'
+
+"Plugin 'ervandew/eclim'
+
+
+
+
+" Documentations
+Plugin 'Vimwiki'
+
+Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
+
+call vundle#end()
+filetype plugin indent on
+
