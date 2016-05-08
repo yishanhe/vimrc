@@ -3,7 +3,6 @@ vimrc
 
 my vimrc bashrc files
 
-Include a autoinstall script.
+Include install/uninstall scripts.
 
-Next:
-Move to spf13
+May 2016, latest update. Turn to NeoBundle for plugin managments. Get rid of most unused plugins and stick only to a few frequently used ones.
