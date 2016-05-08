@@ -11,20 +11,15 @@ lnif() {
 echo "Get the vimrc repo"
 git clone git://github.com/yishanhe/vimrc.git "$VIMHOME"
 
-echo "Get the vundle repo"
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+echo "Get the NeoBundle"
+curl -fsSL https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
 
 echo "Creat the vimrc link"
 
 lnif "$VIMHOME/vimrc"                      "$HOME/.vimrc"
-lnif "$VIMHOME/vimrc.plugins"              "$HOME/.vimrc.plugins"
-lnif "$VIMHOME/vimrc.plugins.config"       "$HOME/.vimrc.plugins.config"
 
-
-
-echo "Plugin Installed"
-vim +PluginInstall +qall
+echo "Plugin will be automatically installed when you first time open VIM."
 
 echo "Shanhe's vimrc is installed."
 
