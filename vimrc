@@ -1,6 +1,9 @@
 """""""""""""""""""""
-""""   VIM SYI   """"
+"      VIM SYI      "
 """""""""""""""""""""
+
+
+" BEGIN of NeoBundle config
 
 if has('vim_starting')
 	if &compatible
@@ -21,11 +24,14 @@ NeoBundle 'CodeFalling/fcitx-vim-osx'
 NeoBundle 'godlygeek/tabular' 
 NeoBundle 'drmingdrmer/vim-syntax-markdown'
 
-" Code complete
+" Code complete & snippets
+NeoBundle 'ervandew/supertab'
 NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'rdnetto/YCM-Generator'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 
 " Python
-NeoBundle 'ervandew/supertab'
 NeoBundle 'vim-scripts/indentpython.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nvie/vim-flake8'
@@ -41,6 +47,11 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 " UI
 NeoBundle 'vim-airline/vim-airline'
 
+" Dash support
+NeoBundle 'rizzatti/dash.vim'
+
+" Wakatime
+NeoBundle 'wakatime/vim-wakatime'
 
 call neobundle#end()
 
@@ -49,8 +60,16 @@ filetype plugin indent on
 NeoBundleCheck  
 
 
-"set mouse=a
-"set mousehide
+"""""""""""""""""""""""""""
+" End of NeoBundle Config "
+"""""""""""""""""""""""""""
+
+" set window size
+set lines=50 columns=100
+
+" set mouse
+set mouse=a
+set mousehide
 
 set history=500
 let mapleader=","
@@ -75,9 +94,10 @@ set wildmode=list:longest,full "Tab 补全command
 
 autocmd! bufwritepost .vimrc source ~/.vimrc " 自动加载vimrc
 
-"快速保存
+" 快速保存
 nmap <leader>w :w!<cr>
 
+" sound
 set noerrorbells
 set novisualbell
 
@@ -124,6 +144,16 @@ let g:vim_markdown_frontmatter=1
 " YCM
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_confirm_extra_conf = ''
+
+
+" ultisnip
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 
 let python_highlight_all=1
