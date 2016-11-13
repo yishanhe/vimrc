@@ -53,6 +53,10 @@ NeoBundle 'rizzatti/dash.vim'
 " Wakatime
 NeoBundle 'wakatime/vim-wakatime'
 
+" Vimwiki
+NeoBundle 'vimwiki/vimwiki'
+
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -142,6 +146,7 @@ let g:vim_markdown_frontmatter=1
 
 
 " YCM
+let g:ycm_path_to_python_interpreter="/usr/local/bin/python"
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -167,3 +172,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\.git$\|\.hg$\|\.svn$',
             \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+
+" vimwiki
+let g:vimwikihome = '/Users/syi/Dropbox/'
+let g:vimwiki_list = [{'path': g:vimwikihome.'yishanhe.github.com/_wiki/',
+            \ 'syntax': 'markdown',
+            \ 'ext': '.markdown',
+            \ 'auto_toc': 1}]
