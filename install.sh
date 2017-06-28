@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 VIMHOME=~/.vim
+DEINHOME=~/.vim/bundles
 
 lnif() {
     if [ -e "$1" ]; then
@@ -11,8 +12,9 @@ lnif() {
 echo "Get the vimrc repo"
 git clone git://github.com/yishanhe/vimrc.git "$VIMHOME"
 
-echo "Get the NeoBundle"
-curl -fsSL https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+echo "Get the Dein"
+mkdir -p "$DEINHOME"
+curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s "$DEINHOME"
 
 
 echo "Creat the vimrc link"
