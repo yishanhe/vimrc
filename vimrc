@@ -3,70 +3,48 @@
 """""""""""""""""""""
 
 
-" BEGIN of NeoBundle config
-
-if has('vim_starting')
-	if &compatible
-		set nocompatible                
-  	endif
-  	set runtimepath+=~/.vim/bundle/neobundle.vim/
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Required:
+set runtimepath+=/Users/shanhey/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-"" My Bundles here:
+" Required:
+if dein#load_state('/Users/shanhey/.vim/bundles')
+  call dein#begin('/Users/shanhey/.vim/bundles')
 
-" 完美vim中输入中文切换
-NeoBundle 'CodeFalling/fcitx-vim-osx' 
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/shanhey/.vim/bundles/repos/github.com/Shougo/dein.vim')
 
-" VIM Markdown support
-NeoBundle 'godlygeek/tabular' 
-NeoBundle 'drmingdrmer/vim-syntax-markdown'
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  " File
+  call dein#add('kien/ctrlp.vim')
+  call dein#add('scrooloose/nerdtree')
+  " UI
+  call dein#add('vim-airline/vim-airline')
+  " You can specify revision/branch/tag.
+  " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-" Code complete & snippets
-NeoBundle 'ervandew/supertab'
-NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'rdnetto/YCM-Generator'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
-" Python
-NeoBundle 'vim-scripts/indentpython.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'nvie/vim-flake8'
-
-
-" File
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs'
-" NeoBundle 'tpope/vim-fugitive'
-
-
-" UI
-NeoBundle 'vim-airline/vim-airline'
-
-" Dash support
-NeoBundle 'rizzatti/dash.vim'
-
-" Wakatime
-NeoBundle 'wakatime/vim-wakatime'
-
-" Vimwiki
-NeoBundle 'vimwiki/vimwiki'
-
-
-call neobundle#end()
-
+" Required:
 filetype plugin indent on
+syntax enable
 
-NeoBundleCheck  
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
-
-"""""""""""""""""""""""""""
-" End of NeoBundle Config "
-"""""""""""""""""""""""""""
+"End dein Scripts-------------------------
 
 " set window size
 set lines=50 columns=100
@@ -136,46 +114,3 @@ nmap <leader>f7 :set foldlevel=7<CR>
 nmap <leader>f8 :set foldlevel=8<CR>
 nmap <leader>f9 :set foldlevel=9<CR>
 
-
-"""""""""""""""""""""""""""""""""""""
-"" Package Configurations
-
-" VIM Markdown
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_frontmatter=1
-
-
-" YCM
-let g:ycm_path_to_python_interpreter="/usr/local/bin/python"
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:ycm_confirm_extra_conf = ''
-
-
-" ultisnip
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-
-let python_highlight_all=1
-syntax on
-
-" nerdtree
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-
-" ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-            \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
-
-" vimwiki
-let g:vimwikihome = '/Users/syi/Dropbox/'
-let g:vimwiki_list = [{'path': g:vimwikihome.'yishanhe.github.com/_wiki/',
-            \ 'syntax': 'markdown',
-            \ 'ext': '.markdown',
-            \ 'auto_toc': 1}]
